@@ -10,22 +10,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #222222;
+  color: white;
 }
 
 .footer {
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
 
 .footer a {
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  flex-grow: .02;
+  color: white;
 }
 
 .title a {
