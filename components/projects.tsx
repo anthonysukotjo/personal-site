@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { DemoLink, WorkBlock } from "./workblock";
+import { WorkBlockBuilder } from "./workblock";
 
 const current = [
   {
@@ -56,28 +56,6 @@ const done = [
     ],
   },
 ];
-
-interface ProjectData {
-  title: string;
-  date: string;
-  description: string;
-  links: Array<DemoLink>;
-}
-
-const WorkBlockBuilder = (data: Array<ProjectData>) => {
-  let elements: JSX.Element[] = [];
-  for (let i = 0; i < data.length; i++) {
-    elements.push(
-      <WorkBlock
-        title={data[i].title}
-        date={data[i].date}
-        description={data[i].description}
-        links={data[i].links}
-      />
-    );
-  }
-  return elements;
-};
 
 const Projects = () => {
   return (

@@ -20,7 +20,6 @@ interface DemoLink {
 const DemoLinkBuilders = (links: Array<DemoLink>) => {
   let elements: JSX.Element[] = [];
   for (let i = 0; i < links.length; i++) {
-      console.log(links[i].l);
     elements.push(
       <a href={links[i].l} style={{ width: "max-content" }}>
         {" "}
@@ -54,4 +53,26 @@ const WorkBlock: FunctionComponent<{
     </Container>
   );
 };
-export { WorkBlock, type DemoLink };
+
+interface ProjectData {
+    title: string;
+    date: string;
+    description: string;
+    links: Array<DemoLink>;
+}
+
+const WorkBlockBuilder = (data: Array<ProjectData>) => {
+    let elements: JSX.Element[] = [];
+    for (let i = 0; i < data.length; i++) {
+        elements.push(
+            <WorkBlock
+                title={data[i].title}
+                date={data[i].date}
+                description={data[i].description}
+                links={data[i].links}
+            />
+        );
+    }
+    return elements;
+};
+export { WorkBlock, type DemoLink, WorkBlockBuilder };
