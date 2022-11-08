@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import Row from "react-bootstrap/Row";
 import { Col, Container } from "react-bootstrap";
+
 const Intro = () => {
   return (
     <Container>
@@ -16,11 +16,20 @@ const Intro = () => {
             <h3>Using data science to research local city politics🏛 </h3>
           </div>
         </Col>
-        <Col className={"text-end"}>
-          <Image
-            width="350"
-            height="350"
-            style={{ borderRadius: "35px", width: "350px", height: "auto" }}
+        <Col
+          className={"text-end"}
+          style={{
+            maxWidth: "350px",
+          }}
+        >
+          <img
+            style={{
+              borderRadius: "35px",
+              width: "auto",
+              maxWidth: "100%",
+              height: "auto",
+              position: "relative",
+            }}
             src={"/profile.jpeg"}
             alt={"Profile Picture"}
           />
