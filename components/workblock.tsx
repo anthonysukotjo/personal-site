@@ -35,17 +35,19 @@ const WorkBlock: FunctionComponent<{
   date: string;
   description: string;
   links: Array<DemoLink>;
+  role?: string;
 }> = (props) => {
   return (
     <Container style={style}>
       <Row className="d-flex justify-content-between" style={margin}>
         <Col>
           <strong>{props.title}</strong>
+            <em>{ props.role ? " — " + props.role : ""}</em>
         </Col>
         <Col className={"text-end"}>{props.date}</Col>
       </Row>
       <Row style={margin}>
-        <Col>{props.description}</Col>
+        <Col style={{ whiteSpace: "pre-line" }}>{props.description}</Col>
       </Row>
       <Row style={margin}>
         {DemoLinkBuilders(props.links)}
@@ -59,10 +61,12 @@ interface ProjectData {
     date: string;
     description: string;
     links: Array<DemoLink>;
+    role?: string;
 }
 
 const WorkBlockBuilder = (data: Array<ProjectData>) => {
     let elements: JSX.Element[] = [];
+
     for (let i = 0; i < data.length; i++) {
         elements.push(
             <WorkBlock
@@ -70,6 +74,7 @@ const WorkBlockBuilder = (data: Array<ProjectData>) => {
                 date={data[i].date}
                 description={data[i].description}
                 links={data[i].links}
+                role={data[i].role}
             />
         );
     }
