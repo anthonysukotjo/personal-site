@@ -25,10 +25,10 @@ const NavigationBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Link href="/#Projects" className="nav-link">
+            <Link href="/proj" className="nav-link">
               <h3>Projects</h3>
             </Link>
-            <Link href="/#Experience" className="nav-link">
+            <Link href="/exp" className="nav-link">
               <h3>Work</h3>
             </Link>
             <Link href="/#Resume" className="nav-link">

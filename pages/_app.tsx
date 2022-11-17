@@ -5,6 +5,7 @@ import Head from "next/head";
 import NavigationBar from "../components/navbar";
 import Footer from "../components/footer";
 import styles from "../styles/Home.module.css";
+import React from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
